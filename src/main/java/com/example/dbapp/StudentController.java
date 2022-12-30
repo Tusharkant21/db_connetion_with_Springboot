@@ -1,12 +1,10 @@
 package com.example.dbapp;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.sql.SQLException;
+import java.util.List;
 
 @RestController
 public class StudentController {
@@ -17,6 +15,11 @@ public class StudentController {
         dbManager.insert_Info(s);
         return;
     }
+   @GetMapping("/info")
+    public void viewstudents() throws SQLException {
+        dbManager.getStudent();
+        return;
 
+   }
 
 }
